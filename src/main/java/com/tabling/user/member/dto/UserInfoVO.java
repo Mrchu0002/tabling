@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 @Data
-public class userInfoVO {
+public class UserInfoVO {
 
 	/* Matching with DB columns */
 	private String infoUUID;  // varchar(50), #역할-유저 매칭

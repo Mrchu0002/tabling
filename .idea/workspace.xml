@@ -7,6 +7,8 @@
     <list default="true" id="ce45cb3b-2237-4289-a531-5e7018117165" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tabling/user/member/dto/MemberDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tabling/user/member/dto/MemberDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tabling/user/member/dto/memberVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tabling/user/member/dto/UserVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tabling/user/member/dto/userInfoVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tabling/user/member/dto/UserInfoVO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +83,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1711606381556</updated>
-      <workItem from="1711606383852" duration="5881000" />
+      <workItem from="1711606383852" duration="6755000" />
     </task>
     <servers />
   </component>

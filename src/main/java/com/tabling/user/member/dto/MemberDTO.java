@@ -10,8 +10,8 @@ import lombok.ToString;
 @ToString
 @RequiredArgsConstructor
 public class MemberDTO {
-	private memberVO member;
-	private userInfoVO memberInfo;
+	private UserVO member;
+	private UserInfoVO memberInfo;
 
 	public Boolean isAdmin() {
 		return memberInfo.getIsAdminbool();
