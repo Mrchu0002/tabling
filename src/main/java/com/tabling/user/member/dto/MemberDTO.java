@@ -1,14 +1,12 @@
 package com.tabling.user.member.dto;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
 @Setter
 @ToString
 @RequiredArgsConstructor
+@AllArgsConstructor
 public class MemberDTO {
 	private UserVO member;
 	private UserInfoVO memberInfo;

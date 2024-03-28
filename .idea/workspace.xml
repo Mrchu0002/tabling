@@ -5,10 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce45cb3b-2237-4289-a531-5e7018117165" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tabling/board/dto/RestImgVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tabling/board/dto/RestThumbVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tabling/board/dto/RestVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tabling/board/dto/RestaurantDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tabling/review/dto/ReviewDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tabling/review/dto/ReviewImgVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tabling/review/dto/ReviewThumbVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tabling/review/dto/ReviewVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tabling/user/admin/dto/AdminVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/sql/MatZipDB_model.mwb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/sql/MatZipDB_query.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" afterPath="$PROJECT_DIR$/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tabling/board/dto/BoardDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tabling/review/dto/ReivewDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tabling/user/admin/dto/AdminDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tabling/user/admin/dto/AdminDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tabling/user/member/dto/MemberDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tabling/user/member/dto/MemberDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tabling/user/member/dto/memberVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tabling/user/member/dto/UserVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tabling/user/member/dto/userInfoVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tabling/user/member/dto/UserInfoVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tabling/user/member/dto/UserVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tabling/user/member/dto/UserVO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,10 +45,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2eIyRYR6sk4IFwNI5NPrFDJbQlL" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -42,8 +62,8 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "feature/DB__VOadd",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -83,7 +103,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1711606381556</updated>
-      <workItem from="1711606383852" duration="6755000" />
+      <workItem from="1711606383852" duration="7406000" />
+      <workItem from="1711631102970" duration="2752000" />
     </task>
     <servers />
   </component>
