@@ -16,22 +16,14 @@ public class Controller {
 		return "login";
 	}
 	
-	@GetMapping("/loginAlert")
-    public String loginAlert() {
-		return "loginalert";
-	}
-	
-	
-	@RequestMapping("/notPermit")
-	public String notPermit() {
-		System.out.println("허가되지 않았습니다");
-		return "login";
-	}
-	
-	
 	
 	@RequestMapping("/register")
 	public String register() {
 		return "register";
+	}
+	
+	@GetMapping("/permitAlert")
+	public String permitAlert() {
+		return "permitAlert";
 	}
 }

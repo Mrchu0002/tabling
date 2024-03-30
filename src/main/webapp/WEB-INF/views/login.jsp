@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,10 +10,29 @@
 <body>
 	<h1>로그인 페이지</h1>
 	
+	<!-- 오류 메세지 출력 -->
+	<h2><c:out value="${error}"/></h2>
 	
-	<!-- 로그인 컨트롤러 -->
-	<input type="text" />
-	<input type="password" />
-	<button type="submit" value="확인"></button>
+	<!-- 로그아웃 메세지 출력 -->
+	<h2><c:out value="${logout}"/></h2>
+	
+	<form method="post" action="/member">
+		<div>
+			<!-- id 입력창 -->
+			<input type="text" name='id' value='testmember' autofocus required />
+		</div>
+		<div>
+			<!-- password 입력창 -->
+			<input type="password" name='password' value='testmember' required />
+		</div>
+		<div>
+			<!-- 제출 버튼 -->
+			<input type="submit" />
+		</div>
+		
+		<!-- CSRF 토큰 포함시켜 보안 강화 -->
+		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+	</form>
+</body>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 5.0 버전은 에러 발생 -->
+<!-- 5.0 버전 에러 발생 주의 -->
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:security="http://www.springframework.org/schema/security"
@@ -8,20 +8,42 @@
 		http://www.springframework.org/schema/beans 
 		http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<security:http>
+	<!-- AccessDeniedHandler 빈 등록 -->
+	<bean id="customAccessDenied" class="com.tabling.security.CustomAccessDeniedHandler"></bean>
+	
+	<!-- 인증 인가 기본 보안 구성 자동 적용/ 접근 제어를 위해 SpEL 표현식 활성화 -->
+	<security:http auto-config="true" use-expressions="true">
+	
+		<!-- member 하위 경로 권한 제어 -->
+		<security:intercept-url pattern="/member/**" access="hasRole('member')"/>
+
+		<security:intercept-url pattern="/admin/**" access="hasRole('admin')"/>
 		
-		<!-- 특정 url 특정 롤 필요 -->
-		<security:intercept-url pattern="/member/**" access="hasRole('admin')"/>
+		<!-- 인증되지 않은 페이지 액세스 시도 시 모달 -->
+		<security:form-login />
+		<!-- login-page="/loginAlert" -->
 		
-		<!-- 인증되지 않은 페이지 액세스 시도 시 /login Post 요청 -->
-		<security:form-login login-page="/loginAlert"/>
-		
-		<!-- 허가되지 않은 페이지 액세스 시도 시 / -->
-		<security:access-denied-handler error-page="/notPermit" />
+		<!-- 권한없는 페이지 액세스 시도 시 모달 -->
+		<!-- <security:access-denied-handler error-page="/permitAlert" /> -->
+		<!-- customAccessDenied 핸들러 참조 -->
+		<security:access-denied-handler ref="customAccessDenied"/>
 		
 	</security:http>
 	
 	<security:authentication-manager>
+	
+		<security:authentication-provider>
+			
+			<security:user-service>
+			
+				<!-- 버전이 낮아서 그런지 "ROLE_" 앞 부분에 무조건 붙여야 실행됨 -->
+				<security:user name="member" password="{noop}member" authorities="ROLE_member"/>
+
+				<security:user name="admin" password="{noop}admin" authorities="ROLE_member, ROLE_admin"/>
+				
+				
+			</security:user-service>
+		</security:authentication-provider>
 	
 	</security:authentication-manager>
 </beans>
