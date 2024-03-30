@@ -6,13 +6,12 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+	<!-- 로그인 성공 핸들러 빈 등록 -->	
+	<bean id="customLoginSuccess" class="com.tabling.security.CustomLoginSuccessHandler"></bean>
 	<!-- 접근 거부 핸들러 빈 등록 -->
-	<bean id="customLoginSuccess"
-		class="com.tabling.security.CustomLoginSuccessHandler">
-	</bean>
 	<bean id="customAccessDenied" class="com.tabling.security.CustomAccessDeniedHandler"></bean>
-	<!-- 로그인 성공 핸들러 빈 등록 -->
-	
+	<!-- bcrypt 클래스 빈 등록 -->
+	<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
 	
 	
 	<!-- 인증 인가 기본 보안 구성 자동 적용/ 접근 제어를 위해 SpEL 표현식 활성화 -->
@@ -48,8 +47,10 @@
 				<security:user name="admin" password="{noop}admin" authorities="ROLE_member, ROLE_admin"/>
 				
 				
-				
 			</security:user-service>
+				
+			<!-- bcrypt 참조값 -->
+			<security:password-encoder ref="bcryptPasswordEncoder"/>
 		</security:authentication-provider>
 	
 	</security:authentication-manager>
