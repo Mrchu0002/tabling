@@ -15,19 +15,8 @@ public class Controller {
 	
 	//로그인 페이지 - Get방식으로 작동해야함
 	@GetMapping("/login")
-	public void login(String error, String logout, Model model) {
+	public void login() {
 	
-		
-		//로그인 에러시 메세지 출력
-		if(error!=null) {
-			model.addAttribute("error","Login Error");
-		}
-		
-		//로그아웃시 메세지 출력
-		if(logout!=null) {
-			model.addAttribute("logout","Logout!");
-		}
-		
 	}
 	
 	@RequestMapping("/register")
