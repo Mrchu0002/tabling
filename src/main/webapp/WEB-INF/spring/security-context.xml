@@ -10,7 +10,14 @@
 
 	<security:http>
 		
-		<security:form-login/>
+		<!-- 특정 url 특정 롤 필요 -->
+		<security:intercept-url pattern="/member/**" access="hasRole('admin')"/>
+		
+		<!-- 인증되지 않은 페이지 액세스 시도 시 /login Post 요청 -->
+		<security:form-login login-page="/loginAlert"/>
+		
+		<!-- 허가되지 않은 페이지 액세스 시도 시 / -->
+		<security:access-denied-handler error-page="/notPermit" />
 		
 	</security:http>
 	
