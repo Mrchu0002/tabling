@@ -8,5 +8,11 @@
 </head>
 <body>
 	<h1>로그인 페이지</h1>
+	
+	
+	<!-- 로그인 컨트롤러 -->
+	<input type="text" />
+	<input type="password" />
+	<button type="submit" value="확인"></button>
 </body>
 </html>
