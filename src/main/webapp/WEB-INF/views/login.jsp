@@ -16,14 +16,14 @@
 	<!-- 로그아웃 메세지 출력 -->
 	<h2><c:out value="${logout}"/></h2>
 	
-	<form method="post" action="/member">
+	<form method="post" action="/login">
 		<div>
 			<!-- id 입력창 -->
-			<input type="text" name='id' value='testmember' autofocus required />
+			<input type="text" name='username' value='member' autofocus required />
 		</div>
 		<div>
 			<!-- password 입력창 -->
-			<input type="password" name='password' value='testmember' required />
+			<input type="password" name='password' value='member' required />
 		</div>
 		<div>
 			<!-- 제출 버튼 -->
