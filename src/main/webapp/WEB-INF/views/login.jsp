@@ -19,11 +19,11 @@
 	<form method="post" action="/login">
 		<div>
 			<!-- id 입력창 -->
-			<input type="text" name='username' value='member' autofocus required />
+			<input type="text" name='username' value='a' autofocus required />
 		</div>
 		<div>
 			<!-- password 입력창 -->
-			<input type="password" name='password' value='member' required />
+			<input type="password" name='password' value='a' required />
 		</div>
 		<div>
 			<!-- 제출 버튼 -->

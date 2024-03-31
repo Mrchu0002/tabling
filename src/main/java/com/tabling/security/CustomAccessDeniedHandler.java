@@ -9,11 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;
 
-import lombok.extern.log4j.Log4j;
-
 //접근 제한 처리 핸들러
 //AccessDeniedHandler 직접 구현하여 다양한 처리 지원 가능
-@Log4j
 public class CustomAccessDeniedHandler implements AccessDeniedHandler {
 
   @Override

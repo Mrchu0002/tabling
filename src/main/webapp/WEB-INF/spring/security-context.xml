@@ -12,15 +12,16 @@
 	<bean id="customAccessDenied" class="com.tabling.security.CustomAccessDeniedHandler"></bean>
 	<!-- bcrypt 클래스 빈 등록 -->
 	<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
-	
+	<!-- CustomerUserDetailsService 빈 등록 -->
+	<bean id ="customUserDetailsService" class="com.tabling.security.CustomUserDetailsService"></bean>
 	
 	<!-- 인증 인가 기본 보안 구성 자동 적용/ 접근 제어를 위해 SpEL 표현식 활성화 -->
 	<security:http auto-config="true" use-expressions="true">
 	
 		<!-- member 하위 경로 권한 제어 -->
-		<security:intercept-url pattern="/member/**" access="hasRole('ROLE_member')"/>
+		<security:intercept-url pattern="/member/**" access="hasRole('ROLE_USER')"/>
 
-		<security:intercept-url pattern="/admin/**" access="hasRole('ROLE_admin')"/>
+		<security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>
 		
 		<!-- 로그인 페이지 경로 지정 -->
 		<!-- 로그인 성공 핸들러 참조값 -->
@@ -37,17 +38,17 @@
 	
 	<security:authentication-manager>
 	
-		<security:authentication-provider>
+		<security:authentication-provider user-service-ref="customUserDetailsService">
 			
-			<security:user-service>
+			<!-- <security:user-service>
 			
-				<!-- "ROLE_" 앞 부분에 필수 -->
+				"ROLE_" 앞 부분에 필수
 				<security:user name="member" password="{noop}member" authorities="ROLE_member"/>
 
 				<security:user name="admin" password="{noop}admin" authorities="ROLE_member, ROLE_admin"/>
 				
 				
-			</security:user-service>
+			</security:user-service> -->
 				
 			<!-- bcrypt 참조값 -->
 			<security:password-encoder ref="bcryptPasswordEncoder"/>
