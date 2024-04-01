@@ -10,7 +10,7 @@ import java.util.Collections;
 public class UserInfoVO {
 
 	/* Matching with DB columns */
-	private String infoUUID;  // varchar(50), #역할-유저 매칭
+	private String userUUID;  // varchar(50), #역할-유저 매칭
 	private String role;  // varchar(30) not null, #역할
 	private String auth;  // varchar(30), #권한
 	private String isAdmin;  // varchar(1) default 'N', #관리자 여부확인 권한/역할보다 먼저 수행

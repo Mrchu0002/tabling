@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 5.0 버전 에러 발생 주의 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 로그인 성공 핸들러 빈 등록 -->	
+	<bean id="customLoginSuccess" class="com.tabling.security.CustomLoginSuccessHandler"></bean>
+	<!-- 접근 거부 핸들러 빈 등록 -->
+	<bean id="customAccessDenied" class="com.tabling.security.CustomAccessDeniedHandler"></bean>
+	<!-- bcrypt 클래스 빈 등록 -->
+	<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
+	<!-- CustomerUserDetailsService 빈 등록 -->
+	<bean id ="customUserDetailsService" class="com.tabling.security.CustomUserDetailsService"></bean>
+	
+	<!-- 인증 인가 기본 보안 구성 자동 적용/ 접근 제어를 위해 SpEL 표현식 활성화 -->
+	<security:http auto-config="true" use-expressions="true">
+	
+		<!-- member 하위 경로 권한 제어 -->
+		<security:intercept-url pattern="/member/**" access="hasRole('ROLE_USER')"/>
+
+		<security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>
+		
+		<!-- 로그인 페이지 경로 지정 -->
+		<!-- 로그인 성공 핸들러 참조값 -->
+		<security:form-login login-page="/login" 
+			authentication-success-handler-ref="customLoginSuccess"/>
+			
+		<!-- 로그아웃 핸들러 참조값 -->
+		<security:logout logout-url="/logout" invalidate-session="true"/>
+			
+		<!-- 접근 거부 핸들러 참조값 -->
+		<security:access-denied-handler ref="customAccessDenied"/>
+		
+	</security:http>
+	
+	<security:authentication-manager>
+	
+		<security:authentication-provider user-service-ref="customUserDetailsService">
+			
+			<!-- <security:user-service>
+			
+				"ROLE_" 앞 부분에 필수
+				<security:user name="member" password="{noop}member" authorities="ROLE_member"/>
+
+				<security:user name="admin" password="{noop}admin" authorities="ROLE_member, ROLE_admin"/>
+				
+				
+			</security:user-service> -->
+				
+			<!-- bcrypt 참조값 -->
+			<security:password-encoder ref="bcryptPasswordEncoder"/>
+		</security:authentication-provider>
+	
+	</security:authentication-manager>
+</beans>
