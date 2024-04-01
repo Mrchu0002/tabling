@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tabling.mapper.MemberMapper">
+   
+    
+    <select id="check" resultType="com.tabling.security.dto.CustomUser" >
+			SELECT u.userID, u.userPwd, i.isAdmin
+			FROM uservo u
+			INNER JOIN UserInfovo i ON u.userUUID = i.userUUID
+			WHERE u.userID = #{userId}
+    </select>
+</mapper>
